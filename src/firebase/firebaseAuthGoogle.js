@@ -15,6 +15,18 @@ export const registrarAdmin = async (token) => {
   try {
     const result = await signInWithPopup(auth, provider);
 
+    const isSupported = () =>
+    'Notification' in window &&
+    'serviceWorker' in navigator &&
+    'PushManager' in window
+
+    if (!isSupported()) {
+      alert('no podemos mandar notificacioones a tu dispositivo, asi que te mandaremos un email')
+      await guardarAdmin(result.user.email, 'sin-token');
+      return;
+    }
+
+
     function requestPermission() {
       console.log('Requesting permission...');
       Notification.requestPermission().then( async (permission) => {

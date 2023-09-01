@@ -342,7 +342,7 @@ const Home = () => {
             value={content}
             onChange={(e) => setContent(e.target.value)}
           /> */}
-          <button onClick={handleSendEmail}>Enviar Correo</button>
+          {/* <button onClick={handleSendEmail}>Enviar Correo</button> */}
         </div>
             
           <div className={`${articleSeleted != null ? '':''}`}>
