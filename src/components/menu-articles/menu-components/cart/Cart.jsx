@@ -623,14 +623,14 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
     // {/* <div className={`animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'} position-relative top-0 start-0 bg-white z-3 pb-5- vw-100`} onLoad={handleLoad}> */}
     // <div className={`position-absolute start-0 top-0 animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'} bg-white z-3`} onLoad={handleLoad}>
 
-    <div className={`bg-white animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'}`} onLoad={handleLoad}>
+<form className='h-auto' onSubmit={handleClickOrdenar}>
+    <div className={`h-auto bg-white animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'}`} onLoad={handleLoad}>
       <>
+  {/* Header del cart */}
       <CartHeader handleClickBack={handleClickBack} />
 
-<form className='' onSubmit={handleClickOrdenar}>
-  {/* Header del cart */}
 
-  <section className='h-100 pb-5-mb-3'>
+  <section className='pb-5-mb-3' style={{height:'80%'}}>
 
     <div className='px-4'>
 
@@ -656,7 +656,10 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
   {/* Btn para ordenar */}
   {/* <div className='p-4 pb-5 bg-white position-absolute bottom-0 w-100 shadow-lg border-top' style={{}}> */}
 <ToastContainer />
-  <div className='p-3 z-3 bg-white position-sticky bottom-0 start-0 w-100'>
+      </>
+    </div>
+    {/* // </main> */}
+  <div className='p-3 z-3 bg-white position-sticky bottom-0 start-0 w-100' style={{height:'10%'}}>
     { existUser && !isOrdenando
       ? <button type='submit' className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Ordenar</button>
       : isOrdenando && !isOrded ? <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Espere</button>
@@ -665,9 +668,6 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
     }
   </div>
     </form>
-      </>
-    </div>
-    // </main>
   );
 }
 

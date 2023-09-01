@@ -122,6 +122,8 @@ function App() {
           <Route path='/*' Component={ErrorPage}></Route>
           <Route path='/see-orders' Component={SeeOrders}></Route>
           <Route path='/see-order' Component={SeeOrder}></Route>
+          {/* <Route path='/send-email' element={server}></Route> */}
+
         </Routes>
       </BrowserRouter>
     </AppContextProvider>

@@ -40,6 +40,10 @@ import HomeViewMenu from './HomeViewMenu';
 // Temporizador
 // import Temporizador from './home/temporizador/Temporizador';
 
+// import React, { useState } from 'react';
+// import puppeteer from 'puppeteer';
+// import fetch from 'node-fetch';
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -242,6 +246,77 @@ const Home = () => {
     };
   }, []);
 
+  // const [contactName, setContactName] = useState('');
+  // const [message, setMessage] = useState('');
+
+  // const sendWhatsAppMessage = async () => {
+  //   const browser = await puppeteer.launch();
+  //   const page = await browser.newPage();
+
+  //   await page.goto('https://web.whatsapp.com/', { waitUntil: 'networkidle0' });
+
+  //   // Espera hasta que el usuario escanee el código QR y se loguee
+  //   await page.waitForSelector('._2_1wd', { visible: true });
+
+  //   // Busca el contacto por nombre y haz clic en el chat
+  //   await page.type('._2_1wd', contactName);
+  //   await page.waitForTimeout(1000);
+  //   await page.click('._210SC');
+
+  //   // Espera a que aparezca el cuadro de mensaje y escribe el mensaje
+  //   await page.waitForSelector('._3u328', { visible: true });
+  //   await page.type('._3u328', message);
+
+  //   // Envía el mensaje presionando la tecla "Enter"
+  //   await page.keyboard.press('Enter');
+
+  //   await page.waitForTimeout(3000);
+  //   await browser.close();
+  // };
+
+  // const handleSendMessage = async () => {
+  //   await sendWhatsAppMessage();
+
+  //   // Opcional: Enviar una notificación al servidor para registrar el envío del mensaje
+  //   await fetch('/api/send-whatsapp-message', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({ contactName, message }),
+  //   });
+  // };
+
+  const [recipient, setRecipient] = useState('');
+  const [subject, setSubject] = useState('');
+  const [content, setContent] = useState('');
+
+  const handleSendEmail = async () => {
+    
+    const response = fetch('https://server-to-send-mails.vercel.app/send-email', {
+      method: 'POST',
+      mode:'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({      
+        "to": "alamrd2016@gmail.com",
+        "subject": "Asunto del correo",
+        "text": "Contenido del correo"
+      })
+    });
+    
+    response.then( (res) => res.json() )
+      .then( (res2) => {
+        console.log(res2)
+      })
+        .catch( (e) => {
+          console.log('Error');
+          console.log(e);
+        })
+
+  };
+
   if(categories != null){
     return(
       <main className={`${viewMenu || viewCodeUser == 'open' || viewSearchCode == 'abrir' ? 'overflow-hidden' : ''}`} style={{maxHeight:articleSeleted != null ? '100vh-' : ''}}>
@@ -249,6 +324,26 @@ const Home = () => {
       <HomeViewMenu Menu={Menu} ContactDev={ContactDev}>
         <main onClick={handleClickMain} >
 
+        <div>
+          {/* <input
+            type="email"
+            placeholder="Destinatario"
+            value={recipient}
+            onChange={(e) => setRecipient(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Asunto"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+          />
+          <textarea
+            placeholder="Contenido del correo"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          /> */}
+          <button onClick={handleSendEmail}>Enviar Correo</button>
+        </div>
             
           <div className={`${articleSeleted != null ? '':''}`}>
 
