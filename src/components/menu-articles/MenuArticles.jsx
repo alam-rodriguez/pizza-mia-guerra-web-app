@@ -338,7 +338,7 @@ const MenuArticles = () => {
         {/* <div className={` col-12 col-md-6 ${!haEstadoEnMenu ? 'animate__animated animate__fadeIn' : ''} z-2 px-3-  ${viewPreviewInfoArticle ? 'animate__animatedanimate__fadeIn z-0 bg-black bg-opacity-25 z-3' : ''}`} > */}
         
         { viewCart 
-          ? <div  className={`cart child1 position-absolute start-0 top-0 animate__animated z-3`} >
+          ? <div  className={`cart child1 position-absolute start-0 top-0 animate__animated z-3 bg-danger p-0`} >
               <Cart  setViewCart={setViewCart} setViewMenu={setViewMenu} resetCart={resetCart} setViewmenuOrArticles={setViewmenuOrArticles} />
             </div>
           : <></>
