@@ -84,6 +84,11 @@ const SignInLikeSemiAdmin = () => {
     
   }
 
+  const isSupported = () =>
+    'Notification' in window &&
+    'serviceWorker' in navigator &&
+    'PushManager' in window
+
   const logUserAdmin = async () => {
 
     const createSemiAdminPromise = new Promise( async (resolve, reject) => {
@@ -115,6 +120,21 @@ const SignInLikeSemiAdmin = () => {
         //   vapidKey: 'BFawL779CXJIflZHL6ERnDErm4qUQZiixQPTxAyKyiO3G6Sxv9tyBL3JEtNZhrxTxmzz6hjoepQEjtsf7fXw_co'
         // }).catch(e => console.log(e));
         // console.log(token);
+        
+        
+
+        if (!isSupported()) {
+          alert('no podemos mandar notificacioones a tu dispositivo, asi que te mandaremos un email');
+          // if(admin != false) saveAdminBD = await guardarSemisAdmins( admins, newAdminsTokens );
+
+          const admins = [ admin ];
+          const newAdminsTokens = {...semiAdmins.adminsTokens};
+          newAdminsTokens[admin] = 'sin-token';  
+          if(admin != false) saveAdminBD = await guardarSemisAdmins( admins, newAdminsTokens );
+
+          return;
+        }
+
         const token = requestPermission();
 
         console.log(1)
@@ -144,6 +164,18 @@ const SignInLikeSemiAdmin = () => {
           }
         });
         if(createAdmin){
+
+          if (!isSupported()) {
+            alert('no podemos mandar notificacioones a tu dispositivo, asi que te mandaremos un email');
+            const admins = [...semiAdmins.semisAdmins, admin];
+            const newAdminsTokens = {...semiAdmins.adminsTokens};
+            newAdminsTokens[admin] = 'sin-token';  
+            if(admin != false) saveAdminBD = await guardarSemisAdmins( admins, newAdminsTokens );
+  
+            return;
+          }
+
+          
           
           // console.log([...semiAdmins.semisAdmins, admin]);
           
@@ -157,6 +189,12 @@ const SignInLikeSemiAdmin = () => {
 
           const admin = await registrarSemiAdmin();
           console.log(admin)
+
+          if (!isSupported()) {
+            alert('Ya esta cuenta esta registrada como semi admin');
+         
+            return;
+          }
 
           // const token = await getToken(messaging, {
           //   vapidKey: 'BFawL779CXJIflZHL6ERnDErm4qUQZiixQPTxAyKyiO3G6Sxv9tyBL3JEtNZhrxTxmzz6hjoepQEjtsf7fXw_co'
