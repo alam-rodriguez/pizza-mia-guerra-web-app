@@ -293,27 +293,7 @@ const Home = () => {
 
   const handleSendEmail = async () => {
     
-    const response = fetch('https://server-to-send-mails.vercel.app/send-email', {
-      method: 'POST',
-      mode:'cors',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({      
-        "to": "alamrd2016@gmail.com",
-        "subject": "Asunto del correo",
-        "text": "Contenido del correo"
-      })
-    });
     
-    response.then( (res) => res.json() )
-      .then( (res2) => {
-        console.log(res2)
-      })
-        .catch( (e) => {
-          console.log('Error');
-          console.log(e);
-        })
 
   };
 

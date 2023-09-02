@@ -338,9 +338,10 @@ const MenuArticles = () => {
         {/* <div className={` col-12 col-md-6 ${!haEstadoEnMenu ? 'animate__animated animate__fadeIn' : ''} z-2 px-3-  ${viewPreviewInfoArticle ? 'animate__animatedanimate__fadeIn z-0 bg-black bg-opacity-25 z-3' : ''}`} > */}
         
         { viewCart 
-          ? <div  className={`cart child1 position-absolute start-0 top-0 animate__animated z-3 bg-danger p-0`} >
-              <Cart  setViewCart={setViewCart} setViewMenu={setViewMenu} resetCart={resetCart} setViewmenuOrArticles={setViewmenuOrArticles} />
-            </div>
+          ? 
+            // <div className={`cart bg-white- child1 position-absolute start-0 top-0  z-3`} >
+              <Cart heightCart={heightCart} setViewCart={setViewCart} setViewMenu={setViewMenu} resetCart={resetCart} setViewmenuOrArticles={setViewmenuOrArticles} />
+            // </div>
           : <></>
         }
 
@@ -353,7 +354,7 @@ const MenuArticles = () => {
           
           { viewMenu == 0 ? 
             <>
-              <h2 className='fs-1 fw-bold'>Menu</h2>
+              <h2 className='fs-1 fw-bold '>Menu</h2>
 
               <div className='d-flex flex-wrap justify-content-between'>
                 { categoriesOfMenu != null
