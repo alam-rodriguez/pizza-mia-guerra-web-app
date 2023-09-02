@@ -260,7 +260,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({      
-          "to": adminsTokens,
+          "to": key,
           "subject": "Hay un nuevo pedido!!!!!!!!!!",
           "text": "Hay un nuevo pedido tienes que entrar a la app"
         })
@@ -429,7 +429,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
         const newStatistics = {
           nombre: pedido.nombre,
           dineroGastado: estadisticas.dineroGastado + total,
-          puntosGanados: estadisticas.puntosGanados + (total / infoPoints.eachPointValue),
+          puntosGanados: infoPoints != undefined ? estadisticas.puntosGanados + (total / infoPoints.eachPointValue) : 0,
           pointsForInviteFriend: estadisticas.pointsForInviteFriend,
           puntosGastados: estadisticas.puntosGastados + puntos,
         }
