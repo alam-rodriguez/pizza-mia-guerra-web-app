@@ -41,7 +41,7 @@ export const guardarAdmin = async (admin, token) => {
   try{
     await setDoc(doc(db, 'app', 'app-info'), {
       admin: admin,
-      adminsTokens: {admin: token},
+      adminsTokens: {[admin]: token},
     });
     return true;
   }catch(e){
