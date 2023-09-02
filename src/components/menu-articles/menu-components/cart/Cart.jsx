@@ -636,14 +636,28 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
     };
   }, []);
 
-  // useEffect( () => {
-  //   setTimeout(() => {
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: 'instant'
-  //     });
-  //   }, 0);
-  // }, [] );
+  // Estado para controlar si el elemento es pegajoso
+  const [isFixed, setIsFixed] = useState(false);
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    setIsFixed(scrollY > 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect( () => {
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }, 0);
+  }, [] );
 
   return (
     // <main className='z-3'>
@@ -654,7 +668,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
     {/* <div  > */}
       <>
   {/* Header del cart */}
-      <CartHeader handleClickBack={handleClickBack} />
+      <CartHeader className={isFixed} handleClickBack={handleClickBack} />
 
 
   <section className='pb-5-mb-3' style={{height:'100%'}}>
@@ -686,7 +700,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
       </>
     {/* </div> */}
     {/* // </main> */}
-  <div className='p-3 z-3 bg-white position-sticky bottom-0 start-0 w-100'>
+  <div className={`${isFixed ? 'position-fixed' : 'position-sticky'} p-3 z-3 bg-white position-sticky bottom-0 start-0 w-100`} style={{height:'10%'}}>
     { existUser && !isOrdenando
       ? <button type='submit' className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Ordenar</button>
       : isOrdenando && !isOrded ? <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Espere</button>
