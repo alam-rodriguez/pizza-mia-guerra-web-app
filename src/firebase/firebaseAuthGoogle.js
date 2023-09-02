@@ -23,7 +23,7 @@ export const registrarAdmin = async (token) => {
     if (!isSupported()) {
       alert('no podemos mandar notificacioones a tu dispositivo, asi que te mandaremos un email')
       await guardarAdmin(result.user.email, 'sin-token');
-      return;
+      return result.user.email;
     }
 
 
