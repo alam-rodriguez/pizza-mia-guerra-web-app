@@ -622,7 +622,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
 
   const [viewSectionInHeader, setViewSectionInHeader] = useState(false);
   const handleScroll2 = () => {
-    console.log(window.scrollY)
+    // console.log(window.scrollY)
     const scrollTop = window.scrollY;
     if(scrollTop > 30) setViewSectionInHeader(true);
     else setViewSectionInHeader(false);
@@ -639,8 +639,18 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
   // Estado para controlar si el elemento es pegajoso
   const [isFixed, setIsFixed] = useState(false);
   const handleScroll = () => {
+    const CartHeader = document.querySelector('.CartHeader');
     const scrollY = window.scrollY;
     setIsFixed(scrollY > 0);
+    
+    if(scrollY > 0){
+      console.log('poner position fixed');
+      CartHeader.classList.replace('position-fixed', 'position-sticky');
+    }else {
+      console.log('poner position normal');
+      CartHeader.classList.replace('position-sticky', 'position-fixed');
+    }
+
   };
 
   useEffect(() => {
@@ -668,7 +678,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
     {/* <div  > */}
       <>
   {/* Header del cart */}
-      <CartHeader className={isFixed} handleClickBack={handleClickBack} />
+  <CartHeader className={isFixed} handleClickBack={handleClickBack} />
 
 
   <section className='pb-5-mb-3' style={{height:'100%'}}>
