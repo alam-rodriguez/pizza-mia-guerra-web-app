@@ -678,7 +678,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
     // {/* <div className={`animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'} position-relative top-0 start-0 bg-white z-3 pb-5- vw-100`} onLoad={handleLoad}> */}
     // <div className={`position-absolute start-0 top-0 animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'} bg-white z-3`} onLoad={handleLoad}>
 
-<form className={`cart bg-white child1 position-absolute start-0 top-0  z-3  h-100- bg-warning- bg-white- animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'}`} onSubmit={handleClickOrdenar}>
+<form className={`cart bg-white- child1 position-absolute  start-0 top-0 z-3  h-100- bg-warning bg-white- animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'}`} onSubmit={handleClickOrdenar}>
     {/* <div  > */}
       <>
   {/* Header del cart */}
