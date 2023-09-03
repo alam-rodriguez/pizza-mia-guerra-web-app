@@ -645,10 +645,10 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
     
     if(scrollY > 0){
       console.log('poner position fixed');
-      CartHeader.classList.replace('position-fixed', 'position-sticky');
+      CartHeader.classList.replace('position-sticky', 'position-fixed');
     }else {
       console.log('poner position normal');
-      CartHeader.classList.replace('position-sticky', 'position-fixed');
+      CartHeader.classList.replace('position-fixed', 'position-sticky');
     }
 
   };
