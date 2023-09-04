@@ -680,7 +680,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
 
       <>
   <CartHeader className={isFixed} handleClickBack={handleClickBack} />
-<form className={`cart bg-white- child1 position-absolute  start-0 top-0 z-3  h-100- bg-warning bg-white- animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'}`} onSubmit={handleClickOrdenar}>
+<form className={`cart bg-white- child1 position-absolute  start-0 top-0 z-2  h-100- bg-warning bg-white- animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'}`} onSubmit={handleClickOrdenar}>
     {/* <div  > */}
   {/* Header del cart */}
 
