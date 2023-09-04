@@ -689,7 +689,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
   {/* Header del cart */}
 
 
-  <section className='pb-5-mb-3 pb-5' style={{height:'100%'}}>
+  <section className='pb-5-mb-3 py-5' style={{height:'100%'}}>
 
     <div className='px-4'>
 
