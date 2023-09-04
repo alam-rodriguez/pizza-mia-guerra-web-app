@@ -714,7 +714,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
       </>
     {/* </div> */}
     {/* // </main> */}
-  <div className={`position-fixed p-3 z-3 bg-white position-sticky bottom-0 start-0 w-100`} style={{height:'10%'}}>
+  <div className={`position-fixed p-3 z-3 bg-white position-sticky- bottom-0 start-0 w-100`} >
     { existUser && !isOrdenando
       ? <button type='submit' className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Ordenar</button>
       : isOrdenando && !isOrded ? <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Espere</button>
