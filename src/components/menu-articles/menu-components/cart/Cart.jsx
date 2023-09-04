@@ -679,10 +679,10 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
     // <div className={`position-absolute start-0 top-0 animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'} bg-white z-3`} onLoad={handleLoad}>
 
 <form className={`cart bg-white- child1 position-absolute  start-0 top-0 z-3  h-100- bg-warning bg-white- animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'}`} onSubmit={handleClickOrdenar}>
+  {/* <CartHeader className={isFixed} handleClickBack={handleClickBack} /> */}
     {/* <div  > */}
       <>
   {/* Header del cart */}
-  <CartHeader className={isFixed} handleClickBack={handleClickBack} />
 
 
   <section className='pb-5-mb-3' style={{height:'100%'}}>
@@ -714,14 +714,14 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
       </>
     {/* </div> */}
     {/* // </main> */}
-  <div className={`position-fixed p-3 z-3 bg-white position-sticky- bottom-0 start-0 w-100`} >
+  {/* <div className={`position-fixed p-3 z-3 bg-white position-sticky- bottom-0 start-0 w-100`} >
     { existUser && !isOrdenando
       ? <button type='submit' className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Ordenar</button>
       : isOrdenando && !isOrded ? <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Espere</button>
       : isOrdenando && isOrded ? <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`} onClick={handleClickVolver}>Volver</button>
       : <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`} onClick={handleClickRegistrarse}>Registrarse</button>
     }
-  </div>
+  </div> */}
     </form>
   );
 }

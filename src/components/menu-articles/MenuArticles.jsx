@@ -22,6 +22,7 @@ import { ToastContainer } from 'react-toastify';
 // React-Router-Dom
 import { useNavigate } from 'react-router-dom';
 import { getImagesFromFolder, getImagesFromFolderForHome } from '../../firebase/firebaseStorage';
+import CartHeader from './menu-components/cart/CartHeader';
 
 const MenuArticles = () => {
 
@@ -328,7 +329,16 @@ const MenuArticles = () => {
       setHeightCart(articleSelected.clientHeight);
     }
   }, [viewCart, viewOrderSelectArticle] );
-  
+
+  const handleClickBack = () => {
+    setClose(true);
+    if(categorySelected != null) setViewMenu(1);
+    else setViewMenu(0);
+    setTimeout(() => {
+      setViewCart(false);
+      setViewmenuOrArticles(true);
+    }, 1000);
+  }
 
   if(categoriesOfMenu != null){
     return (
@@ -339,9 +349,20 @@ const MenuArticles = () => {
         
         { viewCart 
           ? 
-            // <div className={`cart bg-white- child1 position-absolute start-0 top-0  z-3`} >
+          <>
+            {/* // <div className={`cart bg-white- child1 position-absolute start-0 top-0  z-3`} > */}
+              <CartHeader className={isFixed} handleClickBack={handleClickBack} />
               <Cart heightCart={heightCart} setViewCart={setViewCart} setViewMenu={setViewMenu} resetCart={resetCart} setViewmenuOrArticles={setViewmenuOrArticles} />
-            // </div>
+              <div className={`position-fixed p-3 z-3 bg-white position-sticky- bottom-0 start-0 w-100`} >
+                { existUser && !isOrdenando
+                  ? <button type='submit' className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Ordenar</button>
+                  : isOrdenando && !isOrded ? <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Espere</button>
+                  : isOrdenando && isOrded ? <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`} onClick={{}}>Volver</button>
+                  : <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`} onClick={{}}>Registrarse</button>
+                }
+              </div>
+            {/* // </div> */}
+          </>
           : <></>
         }
 
