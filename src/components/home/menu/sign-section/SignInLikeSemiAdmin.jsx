@@ -253,7 +253,7 @@ const SignInLikeSemiAdmin = () => {
         
         {/* <IoIosArrowBack className='position-absolute top-0 start-0 mt-4 display-4' onClick={handleClickBack} /> */}
   
-        <h2 className='display-1 text-danger fw-bold mb-5'>Pedido ya</h2>
+        <h2 className='display-1 text-danger fw-bold mb-5'>ComiApp</h2>
         <p className='text-start fw-bold fs-3'>Por favor inicia sesion con tu email.</p>
         <p>Ut nisi ad commodo veniam mollit ullamco. In Lorem cillum anim cillum et aliqua. Dolore anim cillum id veniam elit esse excepteur.</p>
   
