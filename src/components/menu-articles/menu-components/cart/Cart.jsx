@@ -640,17 +640,20 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
   const [isFixed, setIsFixed] = useState(false);
   const handleScroll = () => {
     const CartHeader = document.querySelector('.CartHeader');
+    const cart = document.querySelector('.cart');
+
     const scrollY = window.scrollY;
     setIsFixed(scrollY > 0);
     
     if(scrollY > 0){
-      console.log('poner position fixed');
-      CartHeader.classList.remove('position-static');
-      CartHeader.classList.add('position-fixed');
+      // console.log('poner position fixed');
+      // CartHeader.classList.remove('position-static');
+      // CartHeader.classList.add('position-fixed');
+      cart.classList.remove('animate__animated');
       // CartHeader.classList.replace('position-sticky', 'position-fixed');
     }else {
-      CartHeader.classList.remove('position-fixed');
-      CartHeader.classList.add('position-static');
+      // CartHeader.classList.remove('position-fixed');
+      // CartHeader.classList.add('position-static');
       // console.log('poner position normal');
       // CartHeader.classList.replace('position-fixed', 'position-sticky');
     }
@@ -674,13 +677,13 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
   }, [] );
 
   return (
-    // <main className='z-3'>
-    // {/* <div className={`animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'} position-relative top-0 start-0 bg-white z-3 pb-5- vw-100`} onLoad={handleLoad}> */}
-    // <div className={`position-absolute start-0 top-0 animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'} bg-white z-3`} onLoad={handleLoad}>
+    <main className={`cart child1- position-absolute z-3 bg-white animate__animated ${!close ? 'animate__fadeInUpBig' : 'animate__slideOutDown'}`}>
+    {/* // <div className={`animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'} position-relative top-0 start-0 bg-white z-3 pb-5- vw-100`} onLoad={handleLoad}> */}
+    {/* // <div className={`position-absolute start-0 top-0 animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'} bg-white z-3`} onLoad={handleLoad}> */}
 
       <>
-  <CartHeader className={isFixed} handleClickBack={handleClickBack} />
-<form className={`cart bg-white- child1 position-absolute  start-0 top-0 z-2  h-100- bg-warning bg-white- animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'}`} onSubmit={handleClickOrdenar}>
+    <CartHeader className={isFixed} handleClickBack={handleClickBack} />
+<form  onSubmit={handleClickOrdenar}>
     {/* <div  > */}
   {/* Header del cart */}
 
@@ -712,7 +715,6 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
   {/* <div className='p-4 pb-5 bg-white position-absolute bottom-0 w-100 shadow-lg border-top' style={{}}> */}
 <ToastContainer />
     {/* </div> */}
-    {/* // </main> */}
   <div className={`position-fixed p-3 z-3 bg-white position-sticky- bottom-0 start-0 w-100`} >
     { existUser && !isOrdenando
       ? <button type='submit' className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Ordenar</button>
@@ -723,6 +725,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
   </div>
     </form>
     </>
+    </main>
   );
 }
 
