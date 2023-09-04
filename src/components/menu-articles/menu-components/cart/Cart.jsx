@@ -652,6 +652,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
       cart.classList.remove('animate__animated');
       // CartHeader.classList.replace('position-sticky', 'position-fixed');
     }else {
+      // cart.classList.add('animate__animated');
       // CartHeader.classList.remove('position-fixed');
       // CartHeader.classList.add('position-static');
       // console.log('poner position normal');
