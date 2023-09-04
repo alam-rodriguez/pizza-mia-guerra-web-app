@@ -352,7 +352,7 @@ const MenuArticles = () => {
           {/* <div className={`position-absolute px-3 vh-100 vw-100 p-0 m-0 start-0 animate__animated animate__fadeIn z-0${viewPreviewInfoArticle ? 'bg-black bg-opacity-25' : ''}`}> */}
           {/* Header */}
           
-          { viewMenu == 0 ? 
+          { viewMenu == 0 && !viewCart ? 
             <>
               <h2 className='fs-1 fw-bold '>Menu</h2>
 
@@ -372,7 +372,7 @@ const MenuArticles = () => {
                 }
               </div>
             </>
-          : viewMenu == 1 ?
+          : viewMenu == 1 && !viewCart?
             <>
               { viewPreviewInfoArticle
                 ? 
