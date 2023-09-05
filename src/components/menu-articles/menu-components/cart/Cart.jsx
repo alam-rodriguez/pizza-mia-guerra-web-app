@@ -249,10 +249,15 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
 
   const enviarNotificacionDePedido = () => {
 
+    // let volver = false;
+
     for (const key in adminsTokens) {
 
-      if(adminsTokens[key] == 'sin-token'){
+      console.log(key);
 
+      if(adminsTokens[key] == 'sin-token'){
+        // volver = true;
+        console.log(adminsTokens[key]);
         const response = fetch('https://server-to-send-mails.vercel.app/send-email', {
         method: 'POST',
         mode:'cors',
@@ -268,15 +273,19 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
       
       response.then( (res) => res.json() )
         .then( (res2) => {
-          console.log(res2)
+          console.warn(res2)
         })
           .catch( (e) => {
             console.log('Error');
             console.log(e);
         });
 
-        return;
-      }
+        // return;
+      } else {
+        
+      // if(volver){
+      //   return;
+      // }
       // console.log(key, adminsTokens[key]);
 
       const notificationData = {
@@ -305,6 +314,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
      .catch(error => {
        console.error('Error:', error);
       });
+      }
 
 
     }
