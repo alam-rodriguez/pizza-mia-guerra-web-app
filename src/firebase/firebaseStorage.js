@@ -39,14 +39,31 @@ export const uploadImage = async (id, file) => {
 }
 
 // obtener url de imagen
-export const getUrlImage = async (path) => {
-  try{
-    const res = await getDownloadURL(ref(storage, path));
-    return res;
-  }catch(e){
-    console.log(e);
-    return false;
-  }
+export const getUrlImage = async (path, type) => {
+
+  // if(type != 'child') {
+    console.log('este es el path')
+    console.log(path);
+    try{
+      const res = await getDownloadURL(ref(storage, path));
+      return res;
+    }catch(e){
+      console.log(e);
+      return false;
+    }
+  // }else {
+  //   try {
+  //     const storageRef = firebase.storage().ref().child(path);
+  //     const url = await storageRef.getDownloadURL();
+  //     return url;
+  //   } catch (e) {
+  //     console.log(e);
+  //     return false;
+  //   }
+  // }
+
+
+ 
 }
 
 // Borrar Imagen

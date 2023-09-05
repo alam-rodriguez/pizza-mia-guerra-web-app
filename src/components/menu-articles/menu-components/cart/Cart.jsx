@@ -472,10 +472,14 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
             if(guardarEstadisca && resPedido && infoUser) {
               enviarNotificacionDePedido();
               resolve('bien');
+              Swal.fire({
+                title: 'Pedido realizado',
+                text: 'pedido realizado con exito, ahora solo tienes que esperar, si tienes algun problemas no dudes en contactarnos', 
+              });
               setIsOrded(true);
               setTimeout(() => {
                 resetCart();
-              }, 5000);
+              }, 10000);
               setAmountPoints(amountPoints - puntos); 
             }
             else reject('mal');

@@ -24,20 +24,27 @@ const OrderSelectArticle = ({className, setViewMenu, setViewOrderSelectArticle, 
   const [imgUrl, setImgUrl] = useState(null);
 
   useEffect( () => {
+    console.warn(articleSelected.imgpath);
+    console.log(imgUrl);
     // window.scrollTo({
     //   top: 0,
     //   behavior: 'instant'
     // });
-    console.log(articleSelected);
     const imgId = articleSelected.imgpath.split('/')[1];
     if(imagenesArticulos[imgId]){
       setImgUrl(imagenesArticulos[imgId]);
       return;
     }
-    console.warn('--------------------');
     const f = async () => {
-      const imgRes = await getUrlImage(articleSelected.imgPath);
+      const imgRes = await getUrlImage(articleSelected.imgpath, 'child');
       setImgUrl(imgRes);
+      // console.warn('--------------------');
+      console.log('path')
+      console.warn(articleSelected.imgpath)
+      // console.warn(imgRes);
+      // if(imgRes == false){
+      //   console.warn(imgRes);
+      // }
       setImagenesArticulos(state => ({...state, [imgId]:imgRes}))
     }
     f();

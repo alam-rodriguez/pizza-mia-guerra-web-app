@@ -323,10 +323,14 @@ const MenuArticles = () => {
       setHeightCart(cart.clientHeight);
       // if(cart.current != undefined)console.warn(cart.current.clientHeight);
     }
-    if(articleSelected != null){
+     if(articleSelected != null && viewOrderSelectArticle){
       console.warn(articleSelected.clientHeight);
       setHeightCart(articleSelected.clientHeight);
     }
+    // if(articleSelected != null){viewOrderSelectArticle
+    //   console.warn(articleSelected.clientHeight);
+    //   setHeightCart(articleSelected.clientHeight);
+    // }
   }, [viewCart, viewOrderSelectArticle] );
   
 
