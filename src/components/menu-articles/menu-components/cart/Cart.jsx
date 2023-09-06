@@ -460,6 +460,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
         // TODO: si existe la info del user, en la funcion de ff usar updateDoc y no setDoc
         // if(stateUserInfo == 'no-exist') infoUser = await saveInfoUser(pedido);
         // else infoUser = updateInfoUser(pedido);
+        console.log(pedido);
         infoUser = updateInfoUser(pedido);
           
 
@@ -574,24 +575,24 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
     const userEmail = await registrarUsuario();
     if(userEmail != false) {
 
-      setExistUser(true);
       setEmail(userEmail);
-
+      
       const res = await getInfoUser(userEmail)
       console.log(res);
-
+      
       generateIdPedido(10);
-
+      
       if(res == 'no-exist'){
         generateCodeRef(10);
       }
       // if(res != false || res != 'no-exist') {
-      //   // setNombre(res.nombre);
-      //   // setDireccion(res.direccion);
-      //   // setTelefono(res.telefono);
-      //   // setCodeRef(res.codeRef);
-      // }
+        //   // setNombre(res.nombre);
+        //   // setDireccion(res.direccion);
+        //   // setTelefono(res.telefono);
+        //   // setCodeRef(res.codeRef);
+        // }
       setStateUserInfo(null);
+      setExistUser(true);
     }
     else alert('error');
   }
@@ -736,7 +737,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
       ? <button type='submit' className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Ordenar</button>
       : isOrdenando && !isOrded ? <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Espere</button>
       : isOrdenando && isOrded ? <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`} onClick={handleClickVolver}>Volver</button>
-      : <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`} onClick={handleClickRegistrarse}>Registrarse</button>
+      : <button type='button' className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`} onClick={handleClickRegistrarse}>Registrarse</button>
     }
   </div>
     </form>
