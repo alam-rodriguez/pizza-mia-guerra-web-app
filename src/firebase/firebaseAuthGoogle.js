@@ -93,9 +93,7 @@ export const registrarUsuario = async (admin, adminsTokens) => {
     
     if(result.user.email == admin){
       
-      
       console.log('si');
-
 
       // const messaging = getMessaging();
       getToken(messaging, { vapidKey: 'BFawL779CXJIflZHL6ERnDErm4qUQZiixQPTxAyKyiO3G6Sxv9tyBL3JEtNZhrxTxmzz6hjoepQEjtsf7fXw_co' }).then( async (currentToken) => {
@@ -121,8 +119,7 @@ export const registrarUsuario = async (admin, adminsTokens) => {
         // ...
       });
 
-      
-
+  
       
       return;
     }

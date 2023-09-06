@@ -488,7 +488,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
           
         toast.promise( crearOrderPromise, {
           pending: 'Realizando Pedido',
-          success: 'Pedido creado con exito',
+          success: 'Pedido realizado con exito',
           error: 'Ah ocurrido un errror, vuelva a intentarlo'
         });
       
@@ -591,6 +591,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
       //   // setTelefono(res.telefono);
       //   // setCodeRef(res.codeRef);
       // }
+      setStateUserInfo(null);
     }
     else alert('error');
   }

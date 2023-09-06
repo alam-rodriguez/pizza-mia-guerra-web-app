@@ -282,7 +282,7 @@ export const updateInfoUser = async (pedido) => {
       nombre: pedido.nombre,
       direccion: pedido.direccion,
       telefono: pedido.telefono,
-      codeRef: pedido.codeRef,
+      // codeRef: pedido.codeRef,
     });
     return true;
   } catch (e) {
