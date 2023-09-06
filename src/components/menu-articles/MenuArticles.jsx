@@ -27,7 +27,7 @@ const MenuArticles = () => {
 
   const navigate = useNavigate();
 
-  const { email, categories, setCategories, categoriesOfMenu, setCategoriesOfMenu, setEmail, categorySelected, cart, setCart, cartOfCategoryPoints, setCartOfCategoryPoints, infoPointsUser, setInfoPointsUser, amountPoints, setAmountPoints, infoPoints, setInfoPoints, estadisticasUser, setEstadisticasUser, setClientOrders, imagenesCategorias, setImagenesCategorias, imagenesArticulos, setImagenesArticulos, articlesOfHome, haEstadoEnMenu, setHaEstadoEnMenu, adminsTokens, setAdminsTokens } = useContext(AppContext)
+  const { maxWidth, email, categories, setCategories, categoriesOfMenu, setCategoriesOfMenu, setEmail, categorySelected, cart, setCart, cartOfCategoryPoints, setCartOfCategoryPoints, infoPointsUser, setInfoPointsUser, amountPoints, setAmountPoints, infoPoints, setInfoPoints, estadisticasUser, setEstadisticasUser, setClientOrders, imagenesCategorias, setImagenesCategorias, imagenesArticulos, setImagenesArticulos, articlesOfHome, haEstadoEnMenu, setHaEstadoEnMenu, adminsTokens, setAdminsTokens } = useContext(AppContext)
 
   const [articlesOfCategorySelected, setArticlesOfCategorySelected] = useState(null);
 
@@ -336,7 +336,7 @@ const MenuArticles = () => {
 
   if(categoriesOfMenu != null){
     return (
-      <main className={` m-auto ${viewCart ? 'overflow-hidden ': ''}`} style={{maxHeight:viewCart ? heightCart:'', maxWidth:600}}>
+      <main className={` m-auto ${viewCart ? 'overflow-hidden ': ''}`} style={{maxHeight:viewCart ? heightCart:'', maxWidth:maxWidth}}>
         
 
         {/* <div className={` col-12 col-md-6 ${!haEstadoEnMenu ? 'animate__animated animate__fadeIn' : ''} z-2 px-3-  ${viewPreviewInfoArticle ? 'animate__animatedanimate__fadeIn z-0 bg-black bg-opacity-25 z-3' : ''}`} > */}

@@ -20,7 +20,7 @@ const SearchCodeRef = ({viewSearchCode, setViewSearchCode}) => {
 
   const navigate = useNavigate();
 
-  const { color1, email, setEmail } = useContext(AppContext);
+  const { maxWidth, color1, email, setEmail } = useContext(AppContext);
 
   const [infoReferido, setInfoReferido] = useState(null);
 

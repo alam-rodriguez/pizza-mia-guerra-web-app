@@ -48,7 +48,7 @@ import HomeViewMenu from './HomeViewMenu';
 const Home = () => {
   const navigate = useNavigate();
 
-  const { color1, categories, setCategories, viewMenu, setViewMenu, articleSeleted, setArticleSeleted, email, setEmail, appInfo, setAppInfo, isAdmin, setIsAdmin, goToHome, setGoToHome, appCategories, setAppCategories,  infoPoints, setInfoPoints, clientOrders, setClientOrders, categoriesOfMenu, setCategoriesOfMenu, imagenesCategorias, setImagenesCategorias, imagenesArticulos, setImagenesArticulos, articlesOfHome, setArticlesOfHome, haEstadoEnHome, sethaEstadoEnHome } = useContext(AppContext);
+  const { maxWidth, color1, categories, setCategories, viewMenu, setViewMenu, articleSeleted, setArticleSeleted, email, setEmail, appInfo, setAppInfo, isAdmin, setIsAdmin, goToHome, setGoToHome, appCategories, setAppCategories,  infoPoints, setInfoPoints, clientOrders, setClientOrders, categoriesOfMenu, setCategoriesOfMenu, imagenesCategorias, setImagenesCategorias, imagenesArticulos, setImagenesArticulos, articlesOfHome, setArticlesOfHome, haEstadoEnHome, sethaEstadoEnHome } = useContext(AppContext);
 
   // const [infoPoints, setInfoPoints] = useState(null);
 
@@ -300,7 +300,7 @@ const Home = () => {
 
   if(categories != null){
     return(
-      <main className={` ${viewMenu || viewCodeUser == 'open' || viewSearchCode == 'abrir' ? 'overflow-hidden' : ''}`} style={{maxHeight:articleSeleted != null ? '100vh-' : ''}}>
+      <main className={` m-auto ${viewMenu || viewCodeUser == 'open' || viewSearchCode == 'abrir' ? 'overflow-hidden' : ''}`} style={{maxHeight:articleSeleted != null ? '100vh-' : '', maxWidth:maxWidth}}>
 
       <HomeViewMenu 
         Menu={()=><Menu viewMenu={viewMenu} />} 

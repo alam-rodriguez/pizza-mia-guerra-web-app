@@ -32,7 +32,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
 
   const navigate = useNavigate();
 
-  const { color1, cart, setCart, email, setEmail, categorySelected, cartOfCategoryPoints, setCartOfCategoryPoints, amountPoints, setAmountPoints, infoPoints, setInfoPoints, estadisticasUser, setEstadisticasUser, adminsTokens } = useContext(AppContext);
+  const { maxWidth, color1, cart, setCart, email, setEmail, categorySelected, cartOfCategoryPoints, setCartOfCategoryPoints, amountPoints, setAmountPoints, infoPoints, setInfoPoints, estadisticasUser, setEstadisticasUser, adminsTokens } = useContext(AppContext);
 
   const [total, setTotal] = useState(0);
   const [puntos, setPuntos] = useState(0);
@@ -694,7 +694,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
   }, [] );
 
   return (
-    <main className={`cart child1- m-auto position-absolute z-3 bg-white animate__animated ${!close ? 'animate__fadeInUpBig' : 'animate__slideOutDown'}`} style={{maxWidth:600}}>
+    <main className={`cart child1- m-auto position-absolute z-3 bg-white animate__animated ${!close ? 'animate__fadeInUpBig' : 'animate__slideOutDown'}`} style={{maxWidth:maxWidth}}>
     {/* // <div className={`animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'} position-relative top-0 start-0 bg-white z-3 pb-5- vw-100`} onLoad={handleLoad}> */}
     {/* // <div className={`position-absolute start-0 top-0 animate__animated ${!close ? 'animate__slideInUp- animate__fadeInUpBig' : 'animate__slideOutDown'} bg-white z-3`} onLoad={handleLoad}> */}
 
@@ -732,7 +732,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
   {/* <div className='p-4 pb-5 bg-white position-absolute bottom-0 w-100 shadow-lg border-top' style={{}}> */}
 <ToastContainer />
     {/* </div> */}
-  <div className={`position-fixed p-3 z-3 bg-white position-sticky- bottom-0 start-50 translate-middle-x w-100`} style={{maxWidth:600}}>
+  <div className={`position-fixed p-3 z-3 bg-white position-sticky- bottom-0 start-50 translate-middle-x w-100`} style={{maxWidth:maxWidth}}>
     { existUser && !isOrdenando
       ? <button type='submit' className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Ordenar</button>
       : isOrdenando && !isOrded ? <button className={`p-2 fs-5 rounded-3 btn ${color1.btn} form-control`}>Espere</button>

@@ -13,6 +13,8 @@ const AppContextProvider = ({children}) => {
     btn        : 'btn-success',
     btnOutline : 'btn-outline-success',
   });
+
+  const [maxWidth, setmaxWidth] = useState(700);
   // const [color1, setColor1] = useState('bg-success');
   // const [color1Text, setColor1Text] = useState('text-success');
   // const [color1BtnOutline, setColor1BtnOutline] = useState('btn-outline-success');
@@ -102,6 +104,7 @@ const AppContextProvider = ({children}) => {
         haEstadoEnHome, sethaEstadoEnHome,
         haEstadoEnMenu, setHaEstadoEnMenu,
         adminsTokens, setAdminsTokens,
+        maxWidth
       }}
     >
       {children}
