@@ -85,7 +85,7 @@ const MenuViewArticles = ({id, titulo, imgPath, articulo, setViewPreviewInfoArti
   }, [cart] );
 
   return (
-    <div className='animate__animated********animate__fadeIn d-flex flex-column border rounded-3 overflow-hidden position-relative z-0 my-2' style={{height:'22.5vh', width:'48%'}} onClick={handleClick}>
+    <div className='animate__animated********animate__fadeIn d-flex flex-column border rounded-3 overflow-hidden position-relative z-0 my-2' style={{height:'190px', width:'48%'}} onClick={handleClick}>
       { countItem > 0 
         ? <div className={`${color1.bgColor} rounded-circle position-absolute top-0 end-0 m-3 shadow  d-flex justify-content-center align-content-center `} style={{height:30, width:30}}>
             <p className='fs-5 text-white' >{countItem}</p>

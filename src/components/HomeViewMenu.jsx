@@ -8,9 +8,9 @@ const HomeViewMenu = ({children, Menu, ContactDev}) => {
   return (
     <div className='d-flex h-100- w-100-'>
          
-      <Menu />
+      <Menu className='' />
 
-      <div className={`main-normal w-100 container bg-white z-2 ${viewMenu ? 'main-container-view-menu': ''} ${articleSeleted != null ? 'overflow-hidden':''}`}  >
+      <div className={`main-normal container-sm w-100- container- bg-white z-2 ${viewMenu ? 'main-container-view-menu': ''} ${articleSeleted != null ? 'overflow-hidden':''}`}  >
         {children} 
       </div>
       

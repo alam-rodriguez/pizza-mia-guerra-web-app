@@ -7,13 +7,13 @@ import { getMessaging, getToken } from 'firebase/messaging';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDikFvbB7WtjJWq0C02tT9QzvFXfZsgmM0",
-  authDomain: "pideya-f502d.firebaseapp.com",
-  projectId: "pideya-f502d",
-  storageBucket: "pideya-f502d.appspot.com",
-  messagingSenderId: "288720639525",
-  appId: "1:288720639525:web:f0bc44382d075aad9791cc",
-  measurementId: "G-EZWFWG1MKH"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
+  measurementId: import.meta.env.VITE_MEASUREMENTID,
 };
 
 // Initialize Firebase

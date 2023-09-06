@@ -55,6 +55,7 @@ const Home = () => {
   // const [clientOrders, setClientOrders] = useState(null);
 
   useEffect( () => {
+    
     if(appInfo == null){
       // logear usuario automaticamente
       onAuthStateChanged(auth, (user) => {
@@ -299,10 +300,13 @@ const Home = () => {
 
   if(categories != null){
     return(
-      <main className={`${viewMenu || viewCodeUser == 'open' || viewSearchCode == 'abrir' ? 'overflow-hidden' : ''}`} style={{maxHeight:articleSeleted != null ? '100vh-' : ''}}>
+      <main className={` ${viewMenu || viewCodeUser == 'open' || viewSearchCode == 'abrir' ? 'overflow-hidden' : ''}`} style={{maxHeight:articleSeleted != null ? '100vh-' : ''}}>
 
-      <HomeViewMenu Menu={Menu} ContactDev={ContactDev}>
-        <main onClick={handleClickMain} >
+      <HomeViewMenu 
+        Menu={()=><Menu viewMenu={viewMenu} />} 
+        ContactDev={ContactDev}
+      >
+        <main className='' onClick={handleClickMain} >
 
         <div>
           {/* <input

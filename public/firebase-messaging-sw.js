@@ -3,13 +3,20 @@ importScripts("https://www.gstatic.com/firebasejs/10.1.0/firebase-messaging-comp
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBT8qzZZQmmh0e6cgneR-c0dPNag_jI6_Y",
-  authDomain: "tutorial-push-web-25a39.firebaseapp.com",
-  projectId: "tutorial-push-web-25a39",
-  storageBucket: "tutorial-push-web-25a39.appspot.com",
-  messagingSenderId: "947571596751",
-  appId: "1:947571596751:web:afbf2e599a7276c60586ba",
-  measurementId: "G-YM4BKFR0RL"
+  // apiKey: "AIzaSyBT8qzZZQmmh0e6cgneR-c0dPNag_jI6_Y",
+  // authDomain: "tutorial-push-web-25a39.firebaseapp.com",
+  // projectId: "tutorial-push-web-25a39",
+  // storageBucket: "tutorial-push-web-25a39.appspot.com",
+  // messagingSenderId: "947571596751",
+  // appId: "1:947571596751:web:afbf2e599a7276c60586ba",
+  // measurementId: "G-YM4BKFR0RL"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
+  measurementId: import.meta.env.VITE_MEASUREMENTID,
 };
 
 const app = firebase.initializeApp(firebaseConfig);

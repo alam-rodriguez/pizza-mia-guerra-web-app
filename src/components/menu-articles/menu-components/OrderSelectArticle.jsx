@@ -361,7 +361,7 @@ const OrderSelectArticle = ({className, setViewMenu, setViewOrderSelectArticle, 
         </section>
 
         {/* <footer className='row h-auto mb-5' style={{}}> */}
-        <footer className='row mb-5- position-fixed bottom-0 start-0 w-100 mx-auto bg-white p-3 border-top- shadow-lg-' style={{}}>
+        <footer className='row mb-5- position-sticky bottom-0 start-0 w-100 mx-auto bg-white p-3 border-top- shadow-lg-' style={{}}>
           <div className='d-flex ps-0 gap-3 align-items-center col-5'>
             <GrSubtractCircle className='display-6' onClick={handleClickReduceCantidadArticulo} />
             <p className='mb-2 display-4 fw-medium text-center'>{cantidadArticulo}</p>

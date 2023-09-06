@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 // React Router
 import { Link } from 'react-router-dom';
@@ -17,7 +17,19 @@ import Swal from 'sweetalert2';
 // React-Toaster
 // import { toast } from 'react-toastify';
 
-const Menu = () => {
+const Menu = ({viewMenu}) => {
+
+	const [display, setdisplay] = useState('d-block');
+	useEffect( () =>{
+		if(!viewMenu){
+			setTimeout(() => {
+				setdisplay('d-none')
+			}, 600);
+		}else {
+			setdisplay('d-block')
+		}
+		return;
+	}, [viewMenu] )
 
 	const { email } = useContext(AppContext);
 
@@ -28,7 +40,7 @@ const Menu = () => {
   });
 
   return (
-    <section className='w-75 mt-5 mx-4 position-absolute'>
+    <section className={`w-75 mt-5 mx-4 position-absolute ${display}`}>
       
 			<Link className='text-decoration-none text-secondary d-flex align-items-center' to='/registro'>
 				<HiFaceSmile className='' style={{fontSize:80}} />

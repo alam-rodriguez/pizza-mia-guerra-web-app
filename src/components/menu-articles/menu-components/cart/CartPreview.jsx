@@ -29,7 +29,7 @@ const CartPreview = ({setViewCart, setViewMenu, setViewmenuOrArticles}) => {
   }
 
   return (
-    <div className={`z-0 d-flex p-3 justify-content-between position-fixed bottom-0 start-0 w-100 rounded-4 rounded-bottom-0 ${color1.bgColor}`} style={{height:65}} onClick={handleClick}>
+    <div className={`z-0 d-flex p-3 justify-content-between position-fixed bottom-0 start-50 w-100 rounded-4 rounded-bottom-0 translate-middle-x ${color1.bgColor}`} style={{height:65, maxWidth:600}} onClick={handleClick}>
       <div className='d-flex gap-3'>
         <MdShoppingCart className='display-6 text-white' />
         <p className='position-relative fs-4 text-white' style={{bottom:3}}>{cart.length + cartOfCategoryPoints.length}</p>

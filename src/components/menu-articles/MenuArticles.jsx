@@ -336,7 +336,7 @@ const MenuArticles = () => {
 
   if(categoriesOfMenu != null){
     return (
-      <main className={` ${viewCart ? 'overflow-hidden ': ''}`} style={{maxHeight:viewCart ? heightCart:''}}>
+      <main className={` m-auto ${viewCart ? 'overflow-hidden ': ''}`} style={{maxHeight:viewCart ? heightCart:'', maxWidth:600}}>
         
 
         {/* <div className={` col-12 col-md-6 ${!haEstadoEnMenu ? 'animate__animated animate__fadeIn' : ''} z-2 px-3-  ${viewPreviewInfoArticle ? 'animate__animatedanimate__fadeIn z-0 bg-black bg-opacity-25 z-3' : ''}`} > */}
@@ -344,7 +344,7 @@ const MenuArticles = () => {
         { viewCart 
           ? 
             // <div className={`cart bg-white- child1 position-absolute start-0 top-0  z-3`} >
-              <Cart heightCart={heightCart} setViewCart={setViewCart} setViewMenu={setViewMenu} resetCart={resetCart} setViewmenuOrArticles={setViewmenuOrArticles} />
+              <Cart className='' heightCart={heightCart} setViewCart={setViewCart} setViewMenu={setViewMenu} resetCart={resetCart} setViewmenuOrArticles={setViewmenuOrArticles} />
             // </div>
           : <></>
         }
