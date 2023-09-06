@@ -72,7 +72,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
       }
       f();
     }
-  }, [stateUserInfo] );
+  }, [] );
 
   // useEffect( () => { 
   //   console.log(categorySelected.nombre);
