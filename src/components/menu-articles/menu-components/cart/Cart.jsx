@@ -577,7 +577,7 @@ const Cart = ({setViewCart, setViewMenu, resetCart, setViewmenuOrArticles}) => {
       setExistUser(true);
       setEmail(userEmail);
 
-      const res = await getInfoUser(userEmail);
+      const res = await getInfoUser(userEmail)
       console.log(res);
 
       generateIdPedido(10);
