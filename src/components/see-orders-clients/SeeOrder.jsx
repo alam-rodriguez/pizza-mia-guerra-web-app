@@ -270,7 +270,10 @@ const handleClickGuardar = async () => {
   // EDITAR ETADISTICAS
 
   // let estadistacasUser = await getEstadisticasUser(seletedOrder.email); 
+  // console.log(puntos)
     if(paid){
+      console.log(estadisticasUser);
+      console.log(givePoints);
       const visita = {
         id: seletedOrder.id,
         fecha: `${seletedOrder.dia}`,
@@ -278,6 +281,7 @@ const handleClickGuardar = async () => {
         puntosGastados: seletedOrder.puntosGastados,
         puntosGenerados: givePoints ? puntos : 0,
       }
+      console.log(visita);
       const guardarEstadisca = await saveEstadistica(seletedOrder.email, visita);
       if(guardarEstadisca){
         console.log('Estadistica guardada');
@@ -777,7 +781,7 @@ const givePointsToFriend = async (statistics) => {
               <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Pago y ya recibio correctamente el pedido ?</label>
             </div>
 
-            { seletedOrder.pointsInfo.activatePoints && puntos > 5 ?
+            { seletedOrder.pointsInfo.activatePoints ?
               <div className="form-check form-switch">
                 <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked={givePoints} onChange={handleChangeGivePoints} />
                 <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Otorgar {puntos} puntos del pedido ?</label>
